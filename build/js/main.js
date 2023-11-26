@@ -1,0 +1,4 @@
+const multiplicationForm=document.querySelector("#multiplication-form"),numberInput=document.querySelector("#number"),multiplicationInput=document.querySelector("#multiplicator"),multiplicationTitle=document.querySelector("#multiplication-title span"),multiplicationTable=document.querySelector(".multiplication-operations"),createTable=(t,e)=>{for(multiplicationTable.innerHTML=" ",i=1;i<=e;i++){var l=t*i,l=`<div class="row"> 
+        <div class="operations">${t} x ${i} = </div>
+        <div class="result">${l}</div>
+        </div>`,l=(new DOMParser).parseFromString(l,"text/html").querySelector(".row");multiplicationTable.appendChild(l)}multiplicationTitle.innerHTML=t+" repetindo até o número "+e};multiplicationForm.addEventListener("submit",function(t){t.preventDefault();var t=+numberInput.value,i=+multiplicationInput.value;t&&i&&createTable(t,i)});
